@@ -1,0 +1,29 @@
+<!doctype html>
+<html ng-app="todoApp">
+  <head>
+    <script src="js/angular.min.js"></script>
+    <script src="js/todo.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/flat-ui.css">
+    <link rel="stylesheet" href="css/todo.css">
+  </head>
+  <body>
+
+    <div ng-controller="TodoController">
+      <h2>Por Hacer</h2>
+      <span>{{remaining()}} de {{todos.length}} restantes</span>
+      [ <a href="" ng-click="archive()">archivar</a> ]
+      <ul class="unstyled">
+        <li ng-repeat="todo in todos">
+          <input type="checkbox" ng-model="todo.done">
+          <span class="done-{{todo.done}}">{{todo.text}}</span>
+        </li>
+      </ul>
+      <form ng-submit="addTodo()">
+        <input type="text" ng-model="todoText"  size="30"
+               placeholder="agregar nuevo">
+        <input class="btn btn-primary" type="submit" value="Agregar">
+      </form>
+    </div>
+  </body>
+</html>

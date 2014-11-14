@@ -1,0 +1,11 @@
+div {
+	margin: 0 auto;
+	width: 550px;
+}
+.done-true {
+  text-decoration: line-through;
+  color: grey;
+}
+input[type=submit]{
+	vertical-align: top;
+}
